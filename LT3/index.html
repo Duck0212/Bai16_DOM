@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Bài Tập CRUD DOM: Quản Lý Sản Phẩm</title>
+  </head>
+  <body class="bg-[#f3f4f6] p-3">
+    <div class="max-w-5xl mx-auto p-6 bg-white rounded-xl shadow-md">
+      <hr class="hidden" />
+
+      <h1 class="text-3xl font-bold text-center mb-10 text-[#88b1bf]">
+        Bài Tập CRUD DOM: Quản Lý Sản Phẩm
+      </h1>
+
+      <div class="shadow-md p-6 mb-6 rounded-md" id="product-form-area">
+        <h2 id="title" class="text-xl font-bold text-[#88b3c0] mb-4">
+          Thêm Sản phẩm Mới
+        </h2>
+        <input
+          class="border border-gray-300 rounded w-full p-2 mb-4 text-sm"
+          type="text"
+          id="product-name-input"
+          placeholder="Tên Sản phẩm"
+        />
+        <input
+          class="border border-gray-300 rounded w-full p-2 mb-4 text-sm"
+          type="number"
+          id="product-price-input"
+          placeholder="Giá (VNĐ)"
+        />
+
+        <input type="hidden" id="product-id-to-edit" value="" />
+
+        <button
+          class="bg-[#86b0be] rounded-md text-white py-3 px-6 text-sm hover:bg-[#7296A2] transition cursor-pointer active:bg-[#5F8793] border border-[#cfcfd1]"
+          id="add-product-btn"
+        >
+          Thêm Sản phẩm
+        </button>
+        <button
+          class="bg-[#86b0be] rounded-md text-white py-3 px-6 text-sm hover:bg-[#7296A2] transition cursor-pointer active:bg-[#5F8793] border border-[#cfcfd1]"
+          id="update-product-btn"
+          style="display: none"
+        >
+          Lưu Thay đổi
+        </button>
+      </div>
+
+      <div class="shadow-md p-6 rounded-md" id="product-list-area">
+        <h2 class="font-bold text-xl text-[#384356] mb-4">
+          Danh sách Sản phẩm
+        </h2>
+        <table
+          id="product-table"
+          border="1"
+          style="width: 100%; text-align: left"
+        >
+          <thead>
+            <tr class="text-[#e6e7eb] bg-[#86b0be]">
+              <th class="p-3 border border-gray-300">ID</th>
+              <th class="p-3 border border-gray-300">Tên Sản phẩm</th>
+              <th class="p-3 border border-gray-300">Giá</th>
+              <th class="p-3 border border-gray-300">Thao tác</th>
+            </tr>
+          </thead>
+          <tbody class="text-sm">
+            <tr class="font-semibold border-b-2 border-gray-500" data-id="1">
+              <td class="p-3">1</td>
+              <td class="p-3 product-name">Bàn phím cơ</td>
+              <td class="p-3 product-price">1.200.000</td>
+              <td class="p-3 text-white flex gap-3 font-normal">
+                <button
+                  class="edit-btn bg-yellow-400 px-4 py-2 rounded-md hover:bg-yellow-600 transition cursor-pointer active:bg-yellow-700"
+                >
+                  Sửa
+                </button>
+                <button
+                  class="delete-btn bg-red-500 px-4 py-2 rounded-md hover:bg-red-700 transition cursor-pointer active:bg-red-900"
+                >
+                  Xóa
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="./javascript/bt.js"></script>
+  </body>
+</html>
